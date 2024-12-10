@@ -11,12 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/productos")
+@CrossOrigin("http://localhost:4200/")
 public class ProductoController {
 
     @Autowired
     private ProductoService productoService;
 
-    @PostMapping("/crear")
+    @PostMapping
     public Producto crearProducto(@RequestBody Producto producto) {
         return productoService.crearProducto(producto);
     }

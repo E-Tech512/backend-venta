@@ -2,12 +2,14 @@ package com.example.backendventa.Service;
 
 import com.example.backendventa.Model.EntradaSalida;
 import com.example.backendventa.Model.Producto;
+import com.example.backendventa.Model.Venta;
 import com.example.backendventa.Repository.EntradaSalidaRepository;
 import com.example.backendventa.Repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -33,5 +35,8 @@ public class EntradaService {
         } else {
             throw new RuntimeException("Producto no encontrado");
         }
+    }
+    public List<EntradaSalida> listarEntradas() {
+        return entradaSalidaRepository.findAll();
     }
 }
